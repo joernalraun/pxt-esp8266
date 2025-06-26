@@ -184,15 +184,18 @@ namespace esp8266 {
 
     /**
      * Initialize the ESP8266.
-     * @param tx Tx pin of micro:bit. eg: SerialPin.P16
-     * @param rx Rx pin of micro:bit. eg: SerialPin.P15
+     * @param tx Tx pin of Calliope mini. eg: SerialPin.C17
+     * @param rx Rx pin of Calliope mini. eg: SerialPin.C16
      * @param baudrate UART baudrate. eg: BaudRate.BaudRate115200
      */
     //% weight=29
     //% blockGap=40
     //% blockId=esp8266_init
-    //% block="initialize ESP8266: Tx %tx Rx %rx Baudrate %baudrate"
-    export function init(tx: SerialPin, rx: SerialPin, baudrate: BaudRate) {
+    //% block="initialize ESP8266: Tx %tx|Rx %rx|Baudrate %baudrate"
+    //% tx.defl=SerialPin.C17
+    //% rx.defl=SerialPin.C16
+    //% baudrate.defl=BaudRate.BaudRate115200
+    export function init(tx: SerialPin = SerialPin.C17, rx: SerialPin = SerialPin.C16, baudrate: BaudRate = BaudRate.BaudRate115200) {
         // Redirect the serial port.
         serial.redirect(tx, rx, baudrate)
         serial.setTxBufferSize(128)
