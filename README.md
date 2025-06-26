@@ -7,10 +7,10 @@ This extension is tested with Espressif ESP-AT Firmware v2.2.0.
 
 ## Initialization (Selecting UART Pins and Baudrate)
 
-Initialize the ESP8266 module (Tx = P16, Rx = P15, Baudrate = 115200).
+Initialize the ESP8266 module (Tx = C17, Rx = C16, Baudrate = 115200).
 
 ```blocks
-esp8266.init(SerialPin.P16, SerialPin.P15, BaudRate.BaudRate115200)
+esp8266.init(SerialPin.C17, SerialPin.C16, BaudRate.BaudRate115200)
 ```
 
 Show happy face if successful.<br>
@@ -118,3 +118,4 @@ MIT
 ## Supported targets
 
 * for PXT/microbit
+* for PXT/calliopemini
